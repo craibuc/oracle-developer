@@ -1,0 +1,108 @@
+= Oracle Developer
+:description: Installation instructions for the Oracle client and development tools on OS X.
+:author: Craig Buchanan
+:email: craig.buchanan@cogniza.org
+:revnumber: 0.0.0
+:revdate: {docdate} {doctime}
+:icons: font
+:toc:
+:toclevels: 4
+:toc-placement: left
+:source-highlighter: coderay
+:data-uri:
+// enable UI macros
+:experimental:
+
+== Summary
+
+Installation instructions for the Oracle client and development tools on OS X.
+
+== Oracle Client
+
+=== Installation
+
+* Visit link:http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html[Instant Client Downloads for Mac OS X (Intel x86)]; accept license
+* Download these 64-bit client packages:
+** Instant Client Package - Basic
+** Instant Client Package - JDBC Supplement
+** Instant Client Package - SQL*Plus
+* Unpack archives; combine folders' contents into a single folder that matches the version number (`client_64_12_1_0_2` for example)
+* Open Terminal; navigate to `/usr/local` (`$ cd /usr/local`)
+* Create `oracle` folder  (`$ mkdir oracle`); change to it (`$ cd oracle`); open folder in Finder (`$ open .`)
+* Move `client_64_12_1_0_2` folder to `/usr/local/oracle`
+* Create a symlink to this folder: `$ ln -s client_64_12_1_0_2 current`; if you need to install other versions of the instant client, alter the symlink to use the desired version
+* Navigate to your home directory (`$ cd ~`)
+* Open your Bash profile file (`$ open ~/.bash_profile`); if you get a message that the file doesn't exist, create it (`$ touch .bash_profile`)
+* Add to `.bash_profile`:
+
+[source,bash]
+----
+# oracle
+export ORACLE_HOME="/usr/local/oracle/current"
+export TNS_ADMIN="/usr/local/oracle/current"
+----
+
+* Save and quit
+
+// === Links
+// - link:https://github.com/InstantClientTap/homebrew-instantclient[Homebrew formulas for Oracle Instant Client]
+
+== SQL Developer
+
+=== Installation
+
+* Visit link:http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html[SQL Developer Downloads]; accept license
+* Download these 64-bit OS X application:
+** Mac OSX
+** Java Development Kit (JDK8), if your Java version isn't 1.8.
+
+Deteremine your Java version:
+
+[source,bash]
+----
+$ java -version
+java version "1.8.0_40"
+Java(TM) SE Runtime Environment (build 1.8.0_40-b25)
+Java HotSpot(TM) 64-Bit Server VM (build 25.40-b25, mixed mode)
+----
+
+=== Configuration
+
+* Add a reference to your organization's database configuration file
+** Open Preferences...(kbd:[⌘ + ,]), navigate to Database > Advanced, set Tnsnames directory to `/path/to/folder/that/contains/tnsnames.ora`
+
+=== UI Tweaks
+
+* To change default display for the `DATE` data type from date to a date/time:
+** Open Preferences...(kbd:[⌘ + ,]), navigate tor Database > NLS Parameters, set Date Format setting to `MM/DD/RR HH24:MI`.
+
+* To remove the (null) text from the results pane, open the Preferences pane (kbd:[⌘ + ,]) then remove '(null)' from the Database >> Advanced Parameters >>| Display Null Value As setting.
+
+=== Links
+
+- link:https://www.thatjeffsmith.com/archive/2012/11/keyboard-shortcuts-in-oracle-sql-developer/[Keyboard Shortcuts in Oracle SQL Developer]
+
+=== Functionality
+==== Export data as CSV
+
+[source,sql]
+----
+SELECT /*CSV*/ *
+FROM PATIENT
+----
+
+// == SQL*Plus
+// === 'Profile'
+
+// C:\Oracle\Product\11.2.0\Client_1\sqlplus\admin\glogin.sql
+
+// [source,sql]
+// ----
+// -- SQL > EDIT myscript.sql
+// define _editor="C:\Users\s0189928\Applications\Sublime Text\sublime_text.exe"
+
+// -- will create prompt
+// set SQLPROMPT "_user'@'_connect_identifier>"
+// set PAGESIZE 3000
+// set LINESIZE 130
+// ----
