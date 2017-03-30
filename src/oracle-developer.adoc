@@ -44,9 +44,6 @@ export TNS_ADMIN="/usr/local/oracle/current"
 
 * Save and quit
 
-// === Links
-// - link:https://github.com/InstantClientTap/homebrew-instantclient[Homebrew formulas for Oracle Instant Client]
-
 == SQL Developer
 
 === Installation
@@ -78,10 +75,6 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.40-b25, mixed mode)
 
 * To remove the (null) text from the results pane, open the Preferences pane (kbd:[⌘ + ,]) then remove '(null)' from the Database >> Advanced Parameters >>| Display Null Value As setting.
 
-=== Links
-
-- link:https://www.thatjeffsmith.com/archive/2012/11/keyboard-shortcuts-in-oracle-sql-developer/[Keyboard Shortcuts in Oracle SQL Developer]
-
 === Functionality
 ==== Export data as CSV
 
@@ -106,3 +99,17 @@ FROM PATIENT
 // set PAGESIZE 3000
 // set LINESIZE 130
 // ----
+
+== Reference
+
+- link:https://github.com/craibuc/oracle-developer[Github project]
+- link:https://github.com/InstantClientTap/homebrew-instantclient[Homebrew formulas for Oracle Instant Client]
+- link:https://www.thatjeffsmith.com/archive/2012/11/keyboard-shortcuts-in-oracle-sql-developer/[Keyboard Shortcuts in Oracle SQL Developer]
+
+== Revision History
+
+[width="100%",cols="",options="header"]
+|===
+|Version|Date|Comments
+|0.0.0|30-MAR-2017|Initial release
+|===
