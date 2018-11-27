@@ -118,5 +118,6 @@ FROM PATIENT
 [width="100%",cols="",options="header"]
 |===
 |Version|Date|Comments
+|0.0.1|27-NOV-2018|Enhancing installation instructions
 |0.0.0|30-MAR-2017|Initial release
 |===
