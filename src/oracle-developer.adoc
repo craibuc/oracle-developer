@@ -2,7 +2,7 @@
 :description: Installation instructions for the Oracle client and development tools on OS X.
 :author: Craig Buchanan
 :email: craig.buchanan@cogniza.org
-:revnumber: 0.0.0
+:revnumber: 0.0.3
 :revdate: {docdate} {doctime}
 :icons: font
 :toc:
@@ -19,18 +19,24 @@ Installation instructions for the Oracle client and development tools on OS X.
 
 == Oracle Client
 
-=== Installation
+=== Preparation
 
 * Visit link:http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html[Instant Client Downloads for Mac OS X (Intel x86)]; accept license
 * Download these 64-bit client packages:
 ** Instant Client Package - Basic
 ** Instant Client Package - JDBC Supplement
 ** Instant Client Package - SQL*Plus
+
+=== Installation
 * Unpack archives; combine folders' contents into a single folder that matches the version number (`client_64_12_1_0_2` for example)
 * Open Terminal; navigate to `/usr/local` (`$ cd /usr/local`)
 * Create `oracle` folder  (`$ mkdir oracle`); change to it (`$ cd oracle`); open folder in Finder (`$ open .`)
 * Move `client_64_12_1_0_2` folder to `/usr/local/oracle`
 * Create a symlink to this folder: `$ ln -s client_64_12_1_0_2 current`; if you need to install other versions of the instant client, alter the symlink to use the desired version
+* symlink sqlplus directory that is on path: `ln -s /usr/local/oracle/current/sqlplus /usr/local/bin/sqlplus`
+
+=== Configuration
+
 * Navigate to your home directory (`$ cd ~`)
 * Open your Bash profile file (`$ open ~/.bash_profile`); if you get a message that the file doesn't exist, create it (`$ touch .bash_profile`)
 * Add to `.bash_profile`:
@@ -40,6 +46,7 @@ Installation instructions for the Oracle client and development tools on OS X.
 # oracle
 export ORACLE_HOME="/usr/local/oracle/current"
 export TNS_ADMIN="/usr/local/oracle/current"
+export DYLD_LIBRARY_PATH="/usr/local/oracle/current"
 ----
 
 * Save and quit
