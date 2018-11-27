@@ -4,10 +4,10 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # converts .adoc to .html
-gem 'asciidoctor', '~>1.5.0'
+gem 'asciidoctor'
 
 # converts .adoc to .pdf
-gem 'asciidoctor-pdf', '1.5.0.alpha.5'
+gem 'asciidoctor-pdf'
 
 # code-syntax coloring
 gem 'coderay'
