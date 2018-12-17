@@ -55,10 +55,9 @@ export DYLD_LIBRARY_PATH="/usr/local/oracle/current"
 
 === Installation
 
-* Visit link:http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html[SQL Developer Downloads]; accept license
-* Download these 64-bit OS X application:
-** Mac OSX
-** Java Development Kit (JDK8), if your Java version isn't 1.8.
+* Download these packages:
+** link:https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html[SQL Developer (Mac OS X)]
+** link:https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html[Java Development Kit 8] - SQL Developer only works with JDK 8.
 
 Deteremine your Java version:
 
@@ -118,6 +117,7 @@ FROM PATIENT
 [width="100%",cols="",options="header"]
 |===
 |Version|Date|Comments
+|0.0.2|17-DEC-2018|Enhancing SQL Developer instructions
 |0.0.1|27-NOV-2018|Enhancing installation instructions
 |0.0.0|30-MAR-2017|Initial release
 |===
